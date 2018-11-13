@@ -1,6 +1,14 @@
 {
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
-    "@commitlint/config-conventional": "^7.1.2"
+    "@commitlint/config-conventional": "^7.1.2",
+    "husky": "^1.1.4"
+  },
+  "husky": {
+    "hooks": {
+      "post-checkout": "npm install",
+      "post-pull": "npm install",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }  
   }
 }
